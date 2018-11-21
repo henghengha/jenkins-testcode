@@ -76,8 +76,7 @@
       "ap-northeast-1"  : { "PV64": "ami-99982aff", "HVM64": "ami-da9e2cbc" },
       "ap-southeast-1"  : { "PV64": "ami-3f3d6a5c", "HVM64": "ami-c63d6aa5" },
       "ap-southeast-2"  : { "PV64": "ami-3249a250", "HVM64": "ami-ff4ea59d" },
-      "sa-east-1"       : { "PV64": "ami-b96c29d5", "HVM64": "ami-286f2a44" },
-      "cn-north-1"      : { "HVM64": "ami-0a4eaf6c4454eda75" }
+      "sa-east-1"       : { "PV64": "ami-b96c29d5", "HVM64": "ami-286f2a44" }
     }
   },
 
@@ -98,12 +97,12 @@
           "Statement": [{
             "Effect": "Allow",
             "Principal": {
-              "Service": [ "ec2.amazonaws.com.cn" ]
+              "Service": [ "ec2.amazonaws.com" ]
             },
             "Action": ["sts:AssumeRole"]
           }]
         },
-        "ManagedPolicyArns":["arn:aws-cn:iam::aws:policy/AmazonEC2ContainerServiceFullAccess","arn:aws-cn:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess"],
+        "ManagedPolicyArns":["arn:aws:iam::aws:policy/AmazonEC2ContainerServiceFullAccess","arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess"],
         "Path": "/",
         "Policies": [{
           "PolicyName": "JenkinsRolePolicy",
@@ -113,7 +112,7 @@
               "Effect": "Allow",
               "Action": ["logs:*"],
               "Resource": [
-                "arn:aws-cn:logs:*:*:*"
+                "arn:aws:logs:*:*:*"
               ]
             }, {
               "Effect": "Allow",
